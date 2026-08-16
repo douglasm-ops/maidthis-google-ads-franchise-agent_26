@@ -297,7 +297,7 @@ def render(location: dict[str, object], config_path: Path) -> str:
         lines.extend(
             [
                 "",
-                "### Configured variants not used in the four-by-15 draft",
+                "### Configured variants not used in the headline set",
                 "",
             ]
         )
