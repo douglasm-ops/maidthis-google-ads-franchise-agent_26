@@ -52,6 +52,7 @@ The example is intentionally a **generic Baltimore demonstration**. Replace it b
 - **Demand Gen**: keep out of v1 until primary conversions and qualified-lead quality are stable.
 
 See [`docs/IMPLEMENTATION_GUIDE.md`](docs/IMPLEMENTATION_GUIDE.md) for the full operating procedure and [`docs/SAFETY_AND_APPROVALS.md`](docs/SAFETY_AND_APPROVALS.md) for deployment rules.
+For a step-by-step franchise handoff, see [`docs/FRANCHISE_UTILIZATION_SOP.md`](docs/FRANCHISE_UTILIZATION_SOP.md).
 
 ## Repository map
 
@@ -69,6 +70,7 @@ docs/
   SAFETY_AND_APPROVALS.md    # Dry-run, approval, credential, and verification policy
   DATA_MODEL.md              # Location config and generated plan semantics
   HANDOFF_CHECKLIST.md       # Human launch checklist
+  FRANCHISE_UTILIZATION_SOP.md # Step-by-step franchise operating procedure
   SOURCES_AND_ASSUMPTIONS.md # What was generalized from the Baltimore model
   CI_WORKFLOW_TEMPLATE.yml   # Copy to .github/workflows/ after workflow scope is granted
 schemas/
