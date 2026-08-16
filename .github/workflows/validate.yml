@@ -15,3 +15,35 @@ jobs:
       - run: python -m pip install pyyaml
       - run: python scripts/validate_location.py examples/baltimore-location.yaml
       - run: python scripts/render_plan.py examples/baltimore-location.yaml --out /tmp/example-plan.md
+      - run: python scripts/render_copy_draft.py examples/baltimore-location.yaml --out /tmp/example-copy-draft.md
+      - run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          text = Path("/tmp/example-copy-draft.md").read_text()
+
+          def rows(section):
+              output = []
+              for line in section.splitlines():
+                  cells = [cell.strip() for cell in line.split("|")[1:-1]]
+                  if len(cells) == 4 and cells[0].isdigit():
+                      output.append(cells)
+              return output
+
+          services = text.split("### Headlines")[1:]
+          assert len(services) == 2
+          for service in services:
+              headline_text, description_text = service.split("### Descriptions", 1)
+              headline_rows = rows(headline_text)
+              description_rows = rows(description_text.split("### Configured variants", 1)[0])
+              assert len(headline_rows) == 15
+              assert len(description_rows) == 4
+              for cells in headline_rows:
+                  assert int(cells[2]) == len(cells[1])
+                  assert int(cells[2]) <= 30
+              for cells in description_rows:
+                  assert int(cells[2]) == len(cells[1])
+                  assert int(cells[2]) <= 90
+
+          print("copy draft smoke test passed")
+          PY
