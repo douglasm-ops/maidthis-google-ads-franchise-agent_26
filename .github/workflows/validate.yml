@@ -1,3 +1,6 @@
+- uses: actions/checkout@v7
+- uses: actions/setup-python@v7
+
 name: Validate franchise config
 
 on:
