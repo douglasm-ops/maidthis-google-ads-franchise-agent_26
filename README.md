@@ -70,12 +70,12 @@ docs/
   DATA_MODEL.md              # Location config and generated plan semantics
   HANDOFF_CHECKLIST.md       # Human launch checklist
   SOURCES_AND_ASSUMPTIONS.md # What was generalized from the Baltimore model
-  schemas/
-    deployment-plan.schema.json
-  scripts/
-    validate_location.py       # Deterministic config validator
-    render_plan.py             # Deterministic plan renderer
-  docs/CI_WORKFLOW_TEMPLATE.yml # Copy to .github/workflows/ after workflow scope is granted
+  CI_WORKFLOW_TEMPLATE.yml   # Copy to .github/workflows/ after workflow scope is granted
+schemas/
+  deployment-plan.schema.json
+scripts/
+  validate_location.py       # Deterministic config validator
+  render_plan.py             # Deterministic plan renderer
 ```
 
 ## Security
