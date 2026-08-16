@@ -16,6 +16,7 @@
 - [ ] Search Partners decision is documented.
 - [ ] Keywords map to service intent and landing pages.
 - [ ] Negative keyword routing is reviewed.
+- [ ] Location-specific RSA copy draft is generated and reviewed per enabled service.
 - [ ] RSA and P-Max assets are complete and policy-safe.
 - [ ] LSA eligibility/verification is complete if used.
 

@@ -178,7 +178,27 @@ Review the generated plan as a human-readable draft. It must show:
 If the measurement gate is blocked, the plan is still useful for preparation,
 but campaigns must remain paused and automated bidding must not be enabled.
 
-## Step 5 — Have the agent prepare, not deploy
+## Step 5 — Generate and review location-specific copy
+
+Generate a private RSA copy worksheet for each enabled service:
+
+```bash
+python scripts/render_copy_draft.py config/local-location.yaml \
+  --out reports/<location-slug>-rsa-copy-draft.md
+```
+
+The worksheet contains 15 headline candidates and 4 description candidates per
+enabled service, with character counts, keyword seeds, ad-group context, final
+URL, and review checklists. It uses configured brand, city, service, and
+approved claim fields only. It does not invent pricing, offers, guarantees,
+review counts, response-time promises, or service-area claims.
+
+Review every line against the actual landing page and the service's approved
+offer. Character-limit fit is not policy approval. Keep the output in the
+private `reports/` directory and include the exact accepted headlines,
+descriptions, and URLs in the human approval diff.
+
+## Step 6 — Have the agent prepare, not deploy
 
 Give the external AI agent:
 
@@ -202,7 +222,7 @@ The agent must not infer private IDs from the public example, create an
 unapproved location target, reuse unapproved claims, or treat a green GitHub
 Actions run as deployment approval.
 
-## Step 6 — Perform the read-only preflight
+## Step 7 — Perform the read-only preflight
 
 Before a live write, verify privately:
 
@@ -222,7 +242,7 @@ ad group per true service intent. Start with Exact and Phrase keywords mapped to
 the right service page. Add P-Max only after measurement and asset QA. Add LSA
 only after eligibility, verification, and lead handling are ready.
 
-## Step 7 — Review and approve the exact diff
+## Step 8 — Review and approve the exact diff
 
 The human approver must compare the rendered plan and agent draft with the
 actual read-only preflight. Approval must name:
@@ -237,7 +257,7 @@ actual read-only preflight. Approval must name:
 Save the approval record privately. If anything changes after approval, produce
 a new diff and obtain approval again.
 
-## Step 8 — Apply approved changes safely
+## Step 9 — Apply approved changes safely
 
 Only the authorized operator or approved deployment agent may write to Google
 Ads. Keep new campaigns paused. Apply only the approved diff. Do not:
@@ -252,7 +272,7 @@ After each write, perform a follow-up read. Record the resource name/ID,
 requested state, actual state, and any warning. Keep the verification report
 private.
 
-## Step 9 — Complete measurement QA
+## Step 10 — Complete measurement QA
 
 Before enabling campaigns or automated bidding:
 
@@ -269,7 +289,7 @@ Before enabling campaigns or automated bidding:
 If any test fails, keep campaigns paused, document the failure, and fix
 measurement before scaling or enabling automated bidding.
 
-## Step 10 — Launch and monitor the first 30 days
+## Step 11 — Launch and monitor the first 30 days
 
 After the owner approves the QA result, enable only the approved campaigns and
 record the launch time. Keep a private weekly log covering:

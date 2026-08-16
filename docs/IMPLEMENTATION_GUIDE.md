@@ -35,6 +35,20 @@ A plan that fails validation must not be sent to Google Ads.
 9. Add one complete RSA per enabled ad group: 12–15 headlines and 4 descriptions.
 10. Add reviewed sitelinks, callouts, structured snippets, and call assets.
 
+Generate a location-specific copy worksheet before creating ads:
+
+```bash
+python scripts/render_copy_draft.py config/local-location.yaml \
+  --out reports/<location-slug>-rsa-copy-draft.md
+```
+
+The renderer produces 15 headline candidates and 4 description candidates for
+each enabled service, with character counts and configured keyword/landing-page
+context. It uses only location-configured facts and approved claim fields; it
+does not invent prices, offers, guarantees, review counts, or service-area
+claims. Treat the output as a draft and include the exact reviewed copy in the
+human approval diff.
+
 ## 4. Build P-Max
 
 1. Create `[City] | Leads | [Brand] | PMax` paused.
