@@ -1,0 +1,17 @@
+name: Validate franchise config
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pyyaml
+      - run: python scripts/validate_location.py examples/baltimore-location.yaml
+      - run: python scripts/render_plan.py examples/baltimore-location.yaml --out /tmp/example-plan.md
