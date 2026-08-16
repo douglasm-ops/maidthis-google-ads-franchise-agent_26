@@ -1,0 +1,22 @@
+# Copy slots. Replace every bracketed field and have the location approve claims.
+headline_slots:
+  - "{service} in {city}"
+  - "Professional {service}"
+  - "{service} Near You"
+  - "Local {service}"
+  - "{brand} {city} Cleaners"
+  - "Trusted Local Cleaners"
+  - "Flexible Scheduling"
+  - "Fast Online Booking"
+  - "Call {brand} Today"
+  - "Get a Quote"
+  - "{approved_offer}"
+  - "{approved_proof_point}"
+  - "Book Your {service}"
+  - "{approved_guarantee}"
+  - "{service} That Fits Your Schedule"
+description_slots:
+  - "{service} for {audience}. Book online or call for a quote."
+  - "Reliable local cleaners with flexible scheduling. Request your quote today."
+  - "Detailed {service} without the hassle. Choose a time that works for you."
+  - "Clear pricing, easy booking, and professional help from {brand}."

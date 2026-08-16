@@ -1,0 +1,73 @@
+# Human-readable schema. The validator in scripts/validate_location.py is authoritative.
+location:
+  slug: "lowercase-hyphenated-location-slug"
+  brand_name: "Approved public brand name"
+  legal_business_name: "Legal entity"
+  city: "City"
+  state: "Two-letter state code"
+  timezone: "America/New_York"
+  currency: "USD"
+  phone: "+1-000-000-0000"
+  tracking_phone: "+1-000-000-0000"
+  landing_page: "https://example.com/location/"
+  service_area:
+    cities: ["City"]
+    postal_codes: ["00000"]
+    excluded_areas: []
+    targeting_mode: "PRESENCE"
+  services:
+    - name: "Residential Cleaning"
+      enabled: true
+      landing_page: "https://example.com/location/residential/"
+      ad_group: "Residential Cleaning"
+      keywords: ["house cleaning city"]
+    - name: "Deep Cleaning"
+      enabled: true
+      landing_page: "https://example.com/location/deep-cleaning/"
+      ad_group: "Deep Cleaning"
+      keywords: ["deep cleaning city"]
+    - name: "Move In / Move Out Cleaning"
+      enabled: false
+      landing_page: "https://example.com/location/move/"
+      ad_group: "Move In / Move Out Cleaning"
+      keywords: ["move out cleaning city"]
+    - name: "Office / Commercial Cleaning"
+      enabled: false
+      landing_page: "https://example.com/location/commercial/"
+      ad_group: "Office / Commercial Cleaning"
+      keywords: ["office cleaning city"]
+    - name: "Monthly Cleaning"
+      enabled: false
+      landing_page: "https://example.com/location/monthly/"
+      ad_group: "Monthly Cleaning"
+      keywords: ["monthly house cleaning city"]
+  budget:
+    monthly_total: 0
+    search_share: 0.32
+    pmax_share: 0.38
+    lsa_share: 0.30
+    demand_gen_share: 0.0
+  lead_definition:
+    qualified_form: "Describe the canonical form success event"
+    qualified_call_duration_seconds: 60
+    crm_stage: "Qualified"
+  tracking:
+    tag_owner: "Owner"
+    gtm_container_owner: "Owner"
+    canonical_form_event: "location_form_success"
+    canonical_call_event: "qualified_call"
+    crm_receipt_verified: false
+    enhanced_conversions_reviewed: false
+    utm_template: "utm_source=google&utm_medium=cpc&utm_campaign={campaign}&utm_content={adgroup}"
+  claims:
+    approved_guarantees: []
+    approved_review_claims: []
+    approved_offers: []
+  lsa:
+    eligible: false
+    verified: false
+    enabled: false
+  deployment:
+    mode: "DRY_RUN"
+    create_campaigns_paused: true
+    require_human_approval: true

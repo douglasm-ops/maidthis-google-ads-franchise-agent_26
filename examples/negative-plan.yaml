@@ -1,0 +1,27 @@
+# Adapt, review against the location service catalog, then upload.
+campaign_universal:
+  - term: "jobs"
+    match_type: PHRASE
+    reason: "Employment intent"
+  - term: "careers"
+    match_type: PHRASE
+    reason: "Employment intent"
+  - term: "hiring"
+    match_type: PHRASE
+    reason: "Employment intent"
+  - term: "how to"
+    match_type: PHRASE
+    reason: "DIY/information intent"
+  - term: "free"
+    match_type: PHRASE
+    reason: "Unqualified/free intent"
+  - term: "supplies"
+    match_type: PHRASE
+    reason: "Product intent, not service intent"
+ad_group_routing:
+  - source_groups: ["Residential Cleaning", "Deep Cleaning", "Move In / Move Out Cleaning"]
+    negatives: ["office", "commercial", "janitorial", "custodial"]
+    destination_group: "Office / Commercial Cleaning"
+  - source_groups: ["Office / Commercial Cleaning"]
+    negatives: ["residential", "maid service", "house cleaning"]
+    destination_group: "Residential Cleaning"

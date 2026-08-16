@@ -1,0 +1,9 @@
+[project]
+name = "maidthis-google-ads-franchise-agent"
+version = "0.1.0"
+description = "Dry-run-first Google Ads implementation kit for MaidThis franchise locations"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0"]
+
+[tool.ruff]
+line-length = 120

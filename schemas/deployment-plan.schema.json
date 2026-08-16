@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Google Ads Franchise Deployment Plan",
+  "type": "object",
+  "required": ["location", "measurement_gate", "campaigns", "approval"],
+  "properties": {
+    "location": {"type": "object", "required": ["slug", "city", "state", "landing_page"]},
+    "measurement_gate": {"type": "object", "required": ["form_event", "call_event", "crm_receipt_verified", "passed"]},
+    "campaigns": {"type": "array", "items": {"type": "object", "required": ["name", "type", "status", "daily_budget"]}},
+    "approval": {"type": "object", "required": ["mode", "human_approval_required", "approved"]}
+  }
+}

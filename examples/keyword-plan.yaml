@@ -1,0 +1,15 @@
+# Keyword planning worksheet. Exact/Phrase first; Broad requires an explicit review decision.
+match_type_policy:
+  launch: [EXACT, PHRASE]
+  broad_requires: "Verified primary conversions plus weekly search-term review"
+keyword_groups:
+  - ad_group: "Residential Cleaning"
+    terms: ["house cleaning {city}", "residential cleaning {city}", "maid service {city}", "home cleaners near me"]
+  - ad_group: "Deep Cleaning"
+    terms: ["deep cleaning {city}", "deep house cleaning near me", "deep cleaning services {city}"]
+  - ad_group: "Move In / Move Out Cleaning"
+    terms: ["move out cleaning {city}", "move in cleaning {city}", "rental move out cleaning {city}"]
+  - ad_group: "Office / Commercial Cleaning"
+    terms: ["office cleaning {city}", "commercial cleaning {city}", "janitorial services {city}"]
+  - ad_group: "Monthly Cleaning"
+    terms: ["monthly house cleaning {city}", "monthly maid service {city}"]
